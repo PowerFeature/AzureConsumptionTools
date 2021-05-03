@@ -2,7 +2,7 @@
 	
 
 */
-(SubscriptionID as text, ResourceGroupName as text, TagName as text) as any =>
+(SubscriptionID as text, ResourceGroupName as text) as text =>
 let
     resourceId  = "/subscriptions/" & SubscriptionID & "/resourceGroups/" & ResourceGroupName,
     SearchResult = Table.SelectRows(ResourceGroups, each [id] = resourceId),
